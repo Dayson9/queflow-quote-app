@@ -58,7 +58,7 @@ const QuoteUI = new Component('QuoteUI', {
       font-weight: 500;
     `,
     'button:active': `
-      outline-width: 3px;
+      outline-width: 5px;
     `
   },
   run: (data) => {
