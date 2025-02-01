@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Quotes Generator - QueFlow</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+    body {
+      width: 100vw;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #2B2C31, #0B0E13);
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "queflow": "https://cdn.jsdelivr.net/gh/dayson9/queflowjs@main/lib/queflow.esm-browser.js"
+      }
+    }
+  </script>
+
+  <script>
+    const fetchQuote = (data) => {
+      fetch('https://dummyjson.com/quotes/random').then(res => res.json()).then((d) => {
+        data.quote = d.quote;
+        data.author = d.author;
+      })
+    }
+  </script>
+  <!-- Project -->
+  <script src="./src/App.js" type="module"></script>
+</body>
+
+</html>
