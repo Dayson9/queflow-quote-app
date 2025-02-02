@@ -13,7 +13,10 @@ const QuoteUI = new Component('QuoteUI', {
         <span>"{{ quote }}"</span>
         <cite font-weight="500">-{{ author }}</cite>
         <button onclick={{
-          fetchQuote(data)
+          fetch('https://dummyjson.com/quotes/random').then(res => res.json()).then((d) => {
+            data.quote = d.quote;
+            data.author = d.author;
+          })
         }}>Generate Quote</button>
       </div>
     `
@@ -62,7 +65,10 @@ const QuoteUI = new Component('QuoteUI', {
     `
   },
   run: (data) => {
-    fetchQuote(data)
+    fetch('https://dummyjson.com/quotes/random').then(res => res.json()).then((d) => {
+      data.quote = d.quote;
+      data.author = d.author;
+    })
   }
 })
 

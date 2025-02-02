@@ -16,19 +16,11 @@
   <script type="importmap">
     {
       "imports": {
-        "queflow": "https://esm.sh/gh/dayson9/queflowjs/lib/queflow.esm-browser.js"
+        "queflow": "https://cdn.jsdelivr.net/gh/dayson9/queflowjs@main/lib/queflow.esm-browser.js"
       }
     }
   </script>
 
-  <script>
-    const fetchQuote = (data) => {
-      fetch('https://dummyjson.com/quotes/random').then(res => res.json()).then((d) => {
-        data.quote = d.quote;
-        data.author = d.author;
-      })
-    }
-  </script>
   <!-- Project -->
   <script src="./src/App.js" type="module"></script>
 </body>
